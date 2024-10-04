@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>What Kind of Game Do You Want to Play?</h1>
+        <form id="gameForm">
+            <label for="genre">Select a Genre:</label>
+            <select id="genre" required>
+                <option value="" disabled selected>Select a genre</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="rpg">Role-Playing (RPG)</option>
+                <option value="strategy">Strategy</option>
+                <option value="sports">Sports</option>
+            </select>
+
+            <label for="difficulty">Select Difficulty Level:</label>
+            <select id="difficulty" required>
+                <option value="" disabled selected>Select difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <button type="submit">Get Recommendation</button>
+        </form>
+
+        <div id="recommendation" class="recommendation hidden">
+            <h2>Recommended Game:</h2>
+            <p id="gameOutput"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
