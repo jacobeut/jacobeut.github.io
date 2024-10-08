@@ -1,53 +1,53 @@
-document.getElementById('gameForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
 
-    const genre = document.getElementById('genre').value;
-    const difficulty = document.getElementById('difficulty').value;
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    let recommendation = '';
+h1 {
+    text-align: center;
+}
 
-    if (genre === 'action') {
-        if (difficulty === 'easy') {
-            recommendation = 'Fortnite - An easy action-packed game for beginners.';
-        } else if (difficulty === 'medium') {
-            recommendation = 'Overwatch - A balanced action game with moderate difficulty.';
-        } else if (difficulty === 'hard') {
-            recommendation = 'Dark Souls - A challenging action game for hardcore players.';
-        }
-    } else if (genre === 'adventure') {
-        if (difficulty === 'easy') {
-            recommendation = 'The Legend of Zelda: Wind Waker - A fun and easy adventure game.';
-        } else if (difficulty === 'medium') {
-            recommendation = 'Assassin’s Creed - A moderate challenge with an adventurous spirit.';
-        } else if (difficulty === 'hard') {
-            recommendation = 'Red Dead Redemption 2 - An immersive and complex adventure.';
-        }
-    } else if (genre === 'rpg') {
-        if (difficulty === 'easy') {
-            recommendation = 'Pokemon Sword/Shield - A great entry-level RPG.';
-        } else if (difficulty === 'medium') {
-            recommendation = 'Final Fantasy XV - A moderately challenging RPG experience.';
-        } else if (difficulty === 'hard') {
-            recommendation = 'The Witcher 3 - A deep and challenging RPG for veterans.';
-        }
-    } else if (genre === 'strategy') {
-        if (difficulty === 'easy') {
-            recommendation = 'Plants vs. Zombies - A simple and fun strategy game.';
-        } else if (difficulty === 'medium') {
-            recommendation = 'Civilization VI - A moderately challenging strategy game.';
-        } else if (difficulty === 'hard') {
-            recommendation = 'Starcraft II - A highly competitive strategy game for experts.';
-        }
-    } else if (genre === 'sports') {
-        if (difficulty === 'easy') {
-            recommendation = 'Rocket League - Easy to pick up, hard to master.';
-        } else if (difficulty === 'medium') {
-            recommendation = 'FIFA 22 - A balanced sports game for soccer lovers.';
-        } else if (difficulty === 'hard') {
-            recommendation = 'Madden NFL 22 - A sports simulation game with complex mechanics.';
-        }
-    }
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-    document.getElementById('gameOutput').textContent = recommendation;
-    document.getElementById('recommendation').classList.remove('hidden');
-});
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+#outputText {
+    background: #e7f3fe;
+    padding: 10px;
+    border: 1px solid #b8daff;
+    border-radius: 4px;
+}
