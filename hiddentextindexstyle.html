@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Miracle's Miraculous Anti-Mucking Mechanism</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #007bff;
+        }
+        input {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 1.2em;
+            min-height: 50px;
+            word-wrap: break-word;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden-text {
+            color: transparent; /* Fully transparent */
+            font-size: .1px; /* Smaller size */
+            position: relative; /* Allows positioning */
+            z-index: -1; /* Sends the text behind other elements */
+          /*  user-select: none; /* Prevents selection */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mr. Miracle's Miraculous Anti-Mucking Mechanism</h1>
+    <input type="text" id="input1" placeholder="Enter visible text" oninput="updateOutput()">
+    <input type="text" id="input2" placeholder="Enter hidden text" oninput="updateOutput()">
+
+    <div id="output"></div>
+
+    <script>
+        function updateOutput() {
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+
+            // Split input1 into words for random insertion
+            const words = input1.split(' ');
+
+            // Generate a random index to insert the hidden text
+            const randomIndex = Math.floor(Math.random() * (words.length + 1));
+
+            // Insert hidden text at the random index
+            words.splice(randomIndex, 0, `<span class="hidden-text">${input2}</span>`);
+
+            // Join the words back into a string and update the output
+            document.getElementById('output').innerHTML = words.join(' ');
+        }
+    </script>
+
+</body>
+</html>
